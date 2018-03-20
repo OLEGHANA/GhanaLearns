@@ -1,0 +1,98 @@
+<mat-card>
+  <mat-card-title>Input</mat-card-title>
+  <mat-card-subtitle>Inputs are the basic input component of Material 2</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Password" type="password">
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Email" type="email">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container align="end" class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="amount">
+        <span matPrefix>$&nbsp;</span>
+        <span matSuffix>.00</span>
+      </mat-input-container>
+
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Character count (100 max)" maxLength="100"
+                  value="Hello world. How are you?"
+                  #characterCountHintExample>
+        <mat-hint align="end">{{characterCountHintExample.characterCount}} / 100</mat-hint>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container dividerColor="primary" class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Default Color" value="example">
+      </mat-input-container>
+      <mat-input-container dividerColor="accent" class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Accent Color" value="example">
+      </mat-input-container>
+      <mat-input-container dividerColor="warn" class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Warn Color" value="example">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container dividerColor="primary" class="ml-xs mr-xs" style="width: 100%;">
+        <textarea matInput placeholder="Default Color" value="example"></textarea>
+      </mat-input-container>
+      <mat-input-container dividerColor="accent" class="ml-xs mr-xs" style="width: 100%;">
+        <textarea matInput placeholder="Accent Color" value="example"></textarea>
+      </mat-input-container>
+      <mat-input-container dividerColor="warn" class="ml-xs mr-xs" style="width: 100%;">
+        <textarea matInput placeholder="Warn Color" value="example"></textarea>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container dividerColor="warn" class="ml-xs mr-xs" style="width: 100%;">
+        <textarea matInput placeholder="Character count (100 max)" maxLength="100" class="demo-full-width"
+                  value="Hello world. How are you?"
+                  #characterCountHintExample></textarea>
+        <mat-hint align="end">{{characterCountHintExample.characterCount}} / 100</mat-hint>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput disabled placeholder="Disabled field" value="Value">
+      </mat-input-container>
+
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput required placeholder="Required field">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container hintLabel="Hint label" class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Show Hint Label">
+      </mat-input-container>
+
+      <mat-input-container hintLabel="Hint label" class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Show Hint Label With Character Count">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <div class="ml-xs mr-xs" style="width: 100%;">Hello&nbsp; <mat-input-container dividerColor="accent"><input matInput [(ngModel)]="name" type="text" placeholder="First name"></mat-input-container>, how are you?</div>
+
+      <mat-input-container style="width: 100%;">
+        <input matInput>
+        <mat-placeholder>
+          I <mat-icon class="demo-icons">favorite</mat-icon> <b>bold</b> placeholder
+        </mat-placeholder>
+        <mat-hint>
+          I also <mat-icon class="demo-icons">home</mat-icon> <i>italic</i> hint labels
+        </mat-hint>
+      </mat-input-container>
+    </div>
+  </mat-card-content>
+</mat-card>
+
