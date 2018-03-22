@@ -5,8 +5,8 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 
 export const AppRoutes: Routes = [{
   path: '',
-  redirectTo: 'home',
-  pathMatch: 'full',
+  redirectTo: 'authentication',
+  pathMatch: 'prefix',
 }, {
   path: '',
   component: AdminLayoutComponent,
