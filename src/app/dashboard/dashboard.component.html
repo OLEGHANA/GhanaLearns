@@ -1,4 +1,31 @@
 <div fxLayout="row" fxLayoutWrap="wrap">
+<div fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="16" fxFlex.lg="16" class="m-gap p-gap" *ngFor="let dataCont of diveContainer_data">
+<div class="user-pro-wrap user-profile-thumb"> 
+               <div class="text-center">
+                  <div class="user-i">
+                     <img src="assets/images/_download.png" class="rad-full mb-1" width="100" height="100" alt="">
+                     <div> <span>{{dataCont.name}}</span></div>
+                  </div>
+                   <div class="bg-overlay"></div>
+               </div>
+               <div class="most-used text-center">
+                  <a class="most-link" color="primary">
+                     <mat-icon>note_add</mat-icon>
+                  </a>
+                  <a class="most-link" color="primary">
+                     <mat-icon></mat-icon>
+                  </a>
+                  <a class="most-link" color="primary">
+                     <mat-icon>assignment</mat-icon>
+                  </a>
+         </div>
+         </div>
+ </div>
+ 
+ 
+ 
+ 
+
    <div fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="33.33" fxFlex.lg="33.33" fxFlex.xl="33.33" fxFlex="100" class="m-gap p-gap">
       <mat-card>
          <div class="card-wheather grad-blue">
@@ -42,6 +69,13 @@
       </mat-card>
    </div>
 </div>
+
+
+
+
+
+
+<!--
 <div fxLayout="row" fxLayoutWrap="wrap">
    <div fxFlex.gt-sm="100" fxFlex.gt-xs="100" fxFlex="100" class="m-gap p-gap">
       <mat-card>
@@ -287,9 +321,8 @@
       </mat-card>
    </div>
    <div class="column" fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="33.33" fxFlex.lg="33.33" fxFlex.xl="33.33" fxFlex="100">
-      <!-- Post-->
       <div class="post-module">
-         <!-- Thumbnail-->
+        
          <div class="thumbnail">
             <div class="date">
                <div class="day">27</div>
@@ -297,7 +330,7 @@
             </div>
             <img src="assets/images/unsplash/1.jpg" />
          </div>
-         <!-- Post Content-->
+        
          <div class="post-content">
             <div class="category">Photos</div>
             <h1 class="title">City Lights in New York</h1>
@@ -435,3 +468,4 @@
       </mat-card>
    </div>
 </div>
+-->

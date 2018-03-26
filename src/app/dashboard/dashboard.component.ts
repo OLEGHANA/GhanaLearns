@@ -6,8 +6,21 @@ import { single, multi } from './charts.data';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent {
 
+
+export class DashboardComponent {
+ public name:string;
+ public image:string;
+ diveContainer_data = [
+    {id:1,image:'_download.png',name:'Lesson Notes'},
+    {id:2,image:'_download.png',name:'Assignments'},
+    {id:3,image:'_download.png',name:'Enrolment'}
+  ];
+  
+  
+  
+  
+  
   public single: any[];
   public multi: any[];
 
