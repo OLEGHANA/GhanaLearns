@@ -1,12 +1,13 @@
 <div fxLayout="row" fxLayoutWrap="wrap">
-<div fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="16" fxFlex.lg="16" class="m-gap p-gap" *ngFor="let dataCont of diveContainer_data">
-<div class="user-pro-wrap user-profile-thumb"> 
+<div fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="15" fxFlex.lg="12" class="m-card-gap" *ngFor="let dataCont of diveContainer_data">
+<div class=""> 
+<div class="card card-1">
                <div class="text-center">
                   <div class="user-i">
-                     <img src="assets/images/_download.png" class="rad-full mb-1" width="100" height="100" alt="">
-                     <div> <span>{{dataCont.name}}</span></div>
+                     <img src="assets/images/{{dataCont.image}}" class="mb-1" width="100" height="100" alt="">
+                     <div> <span class="card-font">{{dataCont.name}}</span></div>
                   </div>
-                   <div class="bg-overlay"></div>
+                   
                </div>
                <div class="most-used text-center">
                   <a class="most-link" color="primary">
@@ -18,6 +19,7 @@
                   <a class="most-link" color="primary">
                      <mat-icon>assignment</mat-icon>
                   </a>
+         </div>
          </div>
          </div>
  </div>

@@ -12,9 +12,14 @@ export class DashboardComponent {
  public name:string;
  public image:string;
  diveContainer_data = [
-    {id:1,image:'_download.png',name:'Lesson Notes'},
-    {id:2,image:'_download.png',name:'Assignments'},
-    {id:3,image:'_download.png',name:'Enrolment'}
+    {id:1,image:'cards/notes.svg',name:'Learner Register'},
+    {id:2,image:'cards/clipboards.svg',name:'Assign Task'},
+    {id:3,image:'cards/notepad.svg',name:'Lesson Plan'},
+    {id:4,image:'cards/clipboards.svg',name:'Resources'},
+    {id:5,image:'cards/notepad.svg',name:'Professional Studies'},
+    {id:6,image:'cards/clipboards.svg',name:'Feedback'},
+    {id:7,image:'cards/notepad.svg',name:'Facility Management'},
+    {id:8,image:'cards/settings.svg',name:'System Management'}
   ];
   
   
