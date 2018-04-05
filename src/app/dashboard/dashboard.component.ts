@@ -9,7 +9,7 @@ import { single, multi } from './charts.data';
 
 
 export class DashboardComponent {
- public name:string;
+ /*public name:string;
  public image:string;
  diveContainer_data = [
     {id:1,image:'cards/notes.svg',name:'Learner Register'},
@@ -21,6 +21,7 @@ export class DashboardComponent {
     {id:7,image:'cards/school.svg',name:'Facility Management'},
     {id:8,image:'cards/setting.svg',name:'System Management'}
   ];
+  */
   
   
   

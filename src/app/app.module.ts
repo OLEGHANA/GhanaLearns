@@ -35,6 +35,7 @@ import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { SharedModule } from './shared/shared.module';
 import { LoginComponent } from './login/login/login.component';
+import { LearnerRegisterComponent } from './learner-register/learner-register.component';
 
 export function createTranslateLoader(http: Http) {
   return new TranslateStaticLoader(http, './assets/i18n', '.json');
@@ -51,7 +52,8 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     AuthLayoutComponent,
     JazzDialogComponent,
     CalendarDialogComponent,
-    LoginComponent
+    LoginComponent,
+    LearnerRegisterComponent
   ],
   imports: [
     BrowserModule,
