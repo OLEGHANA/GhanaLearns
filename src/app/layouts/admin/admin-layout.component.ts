@@ -28,8 +28,11 @@ public name:string;
     
   ];
   
-  
-  
+  /**
+   * Added by Laxman for sample
+   */
+  sampleLinks = {1: '/maps/google', 2: '/gallery', 3: '/maps/google', 4: '/gallery', 5: '/maps/google', 6: '/gallery', 7: '/maps/google', 8: '/gallery'};
+
   private _router: Subscription;
 
   today: number = Date.now();
