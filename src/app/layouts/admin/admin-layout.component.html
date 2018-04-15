@@ -173,16 +173,16 @@
                     <img src="assets/images/{{dataCont.image}}" class="mb-1" width="100" height="100" alt="">
                     <div class="card-font"> <span>{{dataCont.name}}</span></div>
                 </div>
-                  
+                  <!-- [sampleLinks[dataCont.id]] -->
               </div>
               <div class="most-used text-center">
-                <a class="card-link" color="primary" [routerLink]='[sampleLinks[dataCont.id]]'>
+                <a class="card-link" color="primary" [routerLink]='[dataCont.addLink]'>
                     <mat-icon class="">note_add</mat-icon>
                 </a>
                 <a class="most-link" color="primary">
                     <mat-icon></mat-icon>
                 </a>
-                <a class="card-link" color="primary">
+                <a class="card-link" color="primary" [routerLink]='[dataCont.viewLink]'>
                     <mat-icon>assignment</mat-icon>
                 </a>
             </div>

@@ -17,15 +17,14 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
 public name:string;
  public image:string;
  diveContainer_data = [
-    {id:1,image:'cards/notes.svg',name:'Learner Register'},
-    {id:2,image:'cards/clipboards.svg',name:'Assign Task'},
-    {id:3,image:'cards/notepad.svg',name:'Lesson Plan'},
-    {id:4,image:'cards/bookshelf.svg',name:'Resources'},
-    {id:5,image:'cards/studying.svg',name:'Professional Studies'},
-    {id:6,image:'cards/feedback.svg',name:'Feedback'},
-    {id:7,image:'cards/school.svg',name:'Facility Management'},
-    {id:8,image:'cards/settings.svg',name:'System Management'}
-    
+    {id:1,image:'cards/notes.svg',name:'Learner Register', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:2,image:'cards/clipboards.svg',name:'Assign Task', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:3,image:'cards/notepad.svg',name:'Lesson Plan', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:4,image:'cards/bookshelf.svg',name:'Resources', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:5,image:'cards/studying.svg',name:'Professional Studies', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:6,image:'cards/feedback.svg',name:'Feedback', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:7,image:'cards/school.svg',name:'Facility Management', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:8,image:'cards/settings.svg',name:'System Management', addLink:'/maps/google',viewLink:'/gallery'}
   ];
   
   /**
