@@ -17,7 +17,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy {
 public name:string;
  public image:string;
  diveContainer_data = [
-    {id:1,image:'cards/notes.svg',name:'Learner Register', addLink:'/maps/google',viewLink:'/gallery'},
+    {id:1,image:'cards/notes.svg',name:'Learner Register', addLink:'/register/new-learner',viewLink:'/register/view-learner'},
     {id:2,image:'cards/clipboards.svg',name:'Assign Task', addLink:'/maps/google',viewLink:'/gallery'},
     {id:3,image:'cards/notepad.svg',name:'Lesson Plan', addLink:'/maps/google',viewLink:'/gallery'},
     {id:4,image:'cards/bookshelf.svg',name:'Resources', addLink:'/maps/google',viewLink:'/gallery'},
