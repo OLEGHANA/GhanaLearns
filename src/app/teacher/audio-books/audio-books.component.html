@@ -1,0 +1,61 @@
+<mat-card>
+  <mat-card-title>Assign Audio Task to Class</mat-card-title>
+  <mat-card-subtitle>Assign Task To Student</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Starting Date">
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="End Date">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
+          <mat-option *ngFor="let group of groups" [value]="group._id">
+            {{ group.name }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Language" [matAutocomplete]="languageAuto" [value]="defaultLanguage">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="1.">
+      </mat-input-container>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="2.">
+      </mat-input-container>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="3.">
+      </mat-input-container>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="4.">
+      </mat-input-container>
+    </div>
+    <div class="pb-1">
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit Task</button>      
+    </div>
+      
+    <mat-autocomplete #languageAuto="matAutocomplete">
+      <mat-option *ngFor="let lang of languages" [value]="lang.code">
+        <span>{{ lang.label }}</span>
+      </mat-option>
+    </mat-autocomplete>
+
+  </mat-card-content>
+</mat-card>
+    
+    

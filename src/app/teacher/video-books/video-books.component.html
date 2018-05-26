@@ -1,0 +1,47 @@
+<mat-card>
+  <mat-card-title>Assign Video Task to Class</mat-card-title>
+  <mat-card-subtitle>View Previous Task Result</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Starting Date">
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="End Date">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
+          <mat-option *ngFor="let group of groups" [value]="group._id">
+            {{ group.name }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Language" [matAutocomplete]="languageAuto" [value]="defaultLanguage">
+      </mat-input-container>
+    </div>
+
+    <h3>Video Book</h3>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Select Video Book" [(ngModel)]="group" [required]="isRequired">
+          <mat-option *ngFor="let group of groups" [value]="group._id">
+            {{ group.name }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+      
+    <mat-autocomplete #languageAuto="matAutocomplete">
+      <mat-option *ngFor="let lang of languages" [value]="lang.code">
+        <span>{{ lang.label }}</span>
+      </mat-option>
+    </mat-autocomplete>
+
+  </mat-card-content>
+</mat-card>
+      

@@ -1,0 +1,17 @@
+ 
+<div fxLayout="row" fxLayoutWrap="wrap">   
+  <div *ngFor="let item of assignTaskItem" fxFlex.sm="100" fxFlex.xs="100" fxFlex.md="33.33" fxFlex.lg="33.33" fxFlex.xl="33.33" fxFlex="100" class="m-gap p-gap">
+    <mat-card>
+      <a [routerLink]="item.viewLink">
+        <div class="card-wheather grad-blue">
+          <div class="weather">
+            <div class="sun d-flex justify-content-between">
+              <img src="assets/images/{{item.image}}" class="mb-1 align-self-center" width="100" height="100" alt="">
+            </div>
+          </div>
+          <div class="city align-self-center">{{item.name}}</div>
+        </div>
+      </a>
+    </mat-card>
+  </div>
+</div>
