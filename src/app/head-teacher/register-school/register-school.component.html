@@ -1,0 +1,86 @@
+<mat-card>
+  <mat-card-title>Register Students</mat-card-title>
+  <mat-card-subtitle>Inputs are the basic input component of Material 2</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Level/Class" [(ngModel)]="currentDrink" [required]="isRequired" [disabled]="isDisabled" #drinkControl="ngModel">
+            <mat-option *ngFor="let level of levels" [value]="level.value">
+                {{ level.label }}
+            </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Student First Name">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Student Last Name">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Student Middle Name">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Date Of Birth">
+        <mat-hint align="start">e.g. 2005-08-15</mat-hint>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <p>Gender</p>
+      <mat-radio-group name="my_options" [disabled]="isDisabled" fxLayout="row">
+        <mat-radio-button value="option_1">Male</mat-radio-button>
+        <mat-radio-button value="option_2">Female</mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Nationality" [(ngModel)]="currentDrink" [required]="isRequired" [disabled]="isDisabled" #drinkControl="ngModel">
+          <mat-option *ngFor="let level of levels" [value]="level.value">
+            {{ level.label }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Phone No. of Guardian">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Login Code">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <ng-container class="ml-xs mr-xs" style="width: 100%;">
+          <label>Upload New Photo</label>
+          <input placeholder="Upload New Photo" type="file">
+      </ng-container>
+    </div>
+
+    <div class="pb-1">
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit</button>
+      <button mat-raised-button mat-button-sm color="accent" class="mr-1 mb-1">Reset</button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+  
+  

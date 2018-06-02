@@ -9,6 +9,8 @@ import { DemoMaterialModule } from '../shared/demo.module';
 import 'hammerjs';
 
 import { BellRoutes } from './bell.routing';
+import { StudentResourcesComponent } from '../teacher/student-resources/student-resources.component';
+import { TeacherResourcesComponent } from './teacher-resources/teacher-resources.component';
 
 @NgModule({
   imports: [
@@ -21,6 +23,8 @@ import { BellRoutes } from './bell.routing';
     FlexLayoutModule
   ],
   declarations: [
+    TeacherResourcesComponent,
+    StudentResourcesComponent
   ],
 })
 

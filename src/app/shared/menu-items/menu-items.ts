@@ -47,20 +47,39 @@ const MENUITEMS = [
   {
     state: 'head-teacher',
     name: 'HEAD TEACHER',
-    type: 'link',
-    icon: 'person'
+    type: 'sub',
+    icon: 'person',
+    children: [{path: 'register-school', name: 'School Details'},
+      {path: 'manage-students', name: 'Manage Students'},
+      {path: 'student-resources', name: 'Student Resources'},
+      {path: 'manage-accessibility', name: 'Manage Accessibility'},
+      {path: 'view-feedbacks', name: 'View Feedback'},
+      {path: 'lesson-plans', name: 'All Lesson Plans'},
+      {path: 'view-students', name: 'View all Students'}
+    ]
   },
   {
     state: 'coach',
     name: 'COACH',
-    type: 'link',
-    icon: 'person'
+    type: 'sub',
+    icon: 'person',
+    children: [
+      {state: 'upload-resources', name: 'Upload Resources'},
+      {state: 'lesson-plans', name: 'All Lesson Plans'},
+      {state: 'view-feedbacks', name: 'View Feedback'},
+      {state: 'view-students', name: 'View all Students'},
+      {state: 'student-resources', name: 'Student Resources'}
+    ]
   },
   {
     state: 'bell',
     name: 'BeLL',
-    type: 'link',
-    icon: 'person'
+    type: 'sub',
+    icon: 'person',
+    children: [
+      {state: 'teacher-resources', name: 'Teacher Resources'},
+      {state: 'student-resources', name: 'Student Resources'}
+    ]
   },
   {
     state: 'apps',

@@ -9,6 +9,11 @@ import { DemoMaterialModule } from '../shared/demo.module';
 import 'hammerjs';
 
 import { CoachRoutes } from './coach.routing';
+import { StudentResourcesComponent } from '../teacher/student-resources/student-resources.component';
+import { UploadResourcesComponent } from '../lead-teacher/upload-resources/upload-resources.component';
+import { LessonPlansComponent } from '../teacher/lesson-plans/lesson-plans.component';
+import { ViewFeedbacksComponent } from '../head-teacher/view-feedbacks/view-feedbacks.component';
+import { ViewStudentsComponent } from '../head-teacher/view-students/view-students.component';
 
 @NgModule({
   imports: [
@@ -21,6 +26,11 @@ import { CoachRoutes } from './coach.routing';
     FlexLayoutModule
   ],
   declarations: [
+    UploadResourcesComponent,
+    LessonPlansComponent,
+    ViewFeedbacksComponent,
+    ViewStudentsComponent,
+    StudentResourcesComponent
   ],
 })
 
