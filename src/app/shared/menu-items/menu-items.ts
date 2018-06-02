@@ -28,6 +28,12 @@ const MENUITEMS = [
     icon: 'explore'
   },
   {
+    state: 'teacher',
+    name: 'TEACHER',
+    type: 'link',
+    icon: 'person'
+  },
+  {
     state: 'apps',
     name: 'APPS',
     type: 'sub',

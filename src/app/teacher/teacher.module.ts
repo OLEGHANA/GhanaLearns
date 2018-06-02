@@ -19,6 +19,13 @@ import { FillInBlanksComponent } from './fill-in-blanks/fill-in-blanks.component
 import { WordFormationComponent } from './word-formation/word-formation.component';
 import { UnjumbleWordComponent } from './unjumble-word/unjumble-word.component';
 import { WordPowerComponent } from './word-power/word-power.component';
+import { StudentResourcesComponent } from './student-resources/student-resources.component';
+import { RateResourceComponent } from './rate-resource/rate-resource.component';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { LessonPlansComponent } from './lesson-plans/lesson-plans.component';
+import { PreparePlanComponent } from './prepare-plan/prepare-plan.component';
+import { ManageStudentsComponent } from './manage-students/manage-students.component';
+import { StudentExcercisesComponent } from './student-excercises/student-excercises.component';
 
 @NgModule({
   imports: [
@@ -28,7 +35,8 @@ import { WordPowerComponent } from './word-power/word-power.component';
     FormsModule,
     ReactiveFormsModule,
     DemoMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxDatatableModule
   ],
   declarations: [
     RegisterStudentComponent,
@@ -40,7 +48,13 @@ import { WordPowerComponent } from './word-power/word-power.component';
     FillInBlanksComponent,
     WordFormationComponent,
     UnjumbleWordComponent,
-    WordPowerComponent
+    WordPowerComponent,
+    StudentExcercisesComponent,
+    ManageStudentsComponent,
+    PreparePlanComponent,
+    LessonPlansComponent,
+    RateResourceComponent,
+    StudentResourcesComponent
   ],
 })
 

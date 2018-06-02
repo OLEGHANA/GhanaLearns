@@ -1,0 +1,15 @@
+<ngx-datatable
+  class="material"
+  [rows]="rows"
+  [columns]="displayColumns"
+  [columnMode]="'force'"
+  [sortType]="'multi'"
+  [headerHeight]="50"
+  [footerHeight]="50"
+  [rowHeight]="'auto'"
+  [externalPaging]="true"
+  [count]="count"
+  [offset]="offset"
+  [limit]="limit"
+  (page)='onPage($event)'>
+</ngx-datatable>

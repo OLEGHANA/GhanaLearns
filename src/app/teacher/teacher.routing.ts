@@ -9,6 +9,12 @@ import { FillInBlanksComponent } from './fill-in-blanks/fill-in-blanks.component
 import { WordFormationComponent } from './word-formation/word-formation.component';
 import { UnjumbleWordComponent } from './unjumble-word/unjumble-word.component';
 import { WordPowerComponent } from './word-power/word-power.component';
+import { StudentResourcesComponent } from './student-resources/student-resources.component';
+import { RateResourceComponent } from './rate-resource/rate-resource.component';
+import { LessonPlansComponent } from './lesson-plans/lesson-plans.component';
+import { PreparePlanComponent } from './prepare-plan/prepare-plan.component';
+import { ManageStudentsComponent } from './manage-students/manage-students.component';
+import { StudentExcercisesComponent } from './student-excercises/student-excercises.component';
 
 export const TeacherRoutes: Routes = [
   {
@@ -43,6 +49,24 @@ export const TeacherRoutes: Routes = [
     }, {
       path: 'assign-task/word-power',
       component: WordPowerComponent
+    }, {
+      path: 'student-excercises',
+      component: StudentExcercisesComponent
+    }, {
+      path: 'manage-students',
+      component: ManageStudentsComponent
+    }, {
+      path: 'prepare-plan',
+      component: PreparePlanComponent
+    }, {
+      path: 'lesson-plans',
+      component: LessonPlansComponent
+    }, {
+      path: 'rate-resource',
+      component: RateResourceComponent
+    }, {
+      path: 'student-resources',
+      component: StudentResourcesComponent
     }]
   }
 ];

@@ -1,0 +1,113 @@
+<mat-card>
+  <mat-card-title>Prepare Lesson Plan</mat-card-title>
+  <mat-card-subtitle>Inputs are the basic input component of Material 2</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Date of Execution">
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Class" [(ngModel)]="currentDrink" [required]="isRequired" [disabled]="isDisabled" #drinkControl="ngModel">
+            <mat-option *ngFor="let level of levels" [value]="level.value">
+                {{ level.label }}
+            </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Subject">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="References">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Time">
+        <mat-hint align="start">hh:mm:ss eg 8:00:00</mat-hint>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Duration">
+        <mat-hint align="start">e.g. 2hrs / 1hr 30min</mat-hint>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Topic">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Sub-Topic">
+      </mat-input-container>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Aspect">
+      </mat-input-container>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Objective(s)">
+      </mat-input-container>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="RPK">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="T & L resources selected from BeLL" [(ngModel)]="currentDrink" [required]="isRequired" [disabled]="isDisabled" #drinkControl="ngModel">
+          <mat-option *ngFor="let level of levels" [value]="level.value">
+            {{ level.label }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Fluent" [(ngModel)]="currentDrink" [required]="isRequired" [disabled]="isDisabled" #drinkControl="ngModel">
+          <mat-option *ngFor="let level of levels" [value]="level.value">
+            {{ level.label }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Emergent" [(ngModel)]="currentDrink" [required]="isRequired" [disabled]="isDisabled" #drinkControl="ngModel">
+          <mat-option *ngFor="let level of levels" [value]="level.value">
+            {{ level.label }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+
+    <div class="pb-1">
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit</button>
+      <button mat-raised-button mat-button-sm color="accent" class="mr-1 mb-1">Reset</button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+  
+  

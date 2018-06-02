@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-title>Excercises Assigned to Students</mat-card-title>
+  <mat-card-subtitle>View Previous Task Result</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Task Title/Date" [(ngModel)]="group" [required]="isRequired">
+          <mat-option *ngFor="let group of groups" [value]="group._id">
+            {{ group.name }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+    </div>
+  </mat-card-content>
+</mat-card>
+      
