@@ -14,6 +14,9 @@ export const AppRoutes: Routes = [{
     path: 'teacher',
     loadChildren: './teacher/teacher.module#TeacherModule'
   }, {
+    path: 'lead-teacher',
+    loadChildren: './lead-teacher/lead-teacher.module#LeadTeacherModule'
+  }, {
     path: 'home',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
   }, {

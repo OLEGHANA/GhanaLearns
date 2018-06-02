@@ -34,6 +34,35 @@ const MENUITEMS = [
     icon: 'person'
   },
   {
+    state: 'lead-teacher',
+    name: 'LEAD TEACHER',
+    type: 'sub',
+    icon: 'person',
+    children: [
+      {state: 'upload-resources', name: 'Upload Resource'},
+      {state: 'student-resources', name: 'Student Resources'},
+      {state: 'sync-tablets', name: 'Sync Tablets'}
+    ]
+  },
+  {
+    state: 'head-teacher',
+    name: 'HEAD TEACHER',
+    type: 'link',
+    icon: 'person'
+  },
+  {
+    state: 'coach',
+    name: 'COACH',
+    type: 'link',
+    icon: 'person'
+  },
+  {
+    state: 'bell',
+    name: 'BeLL',
+    type: 'link',
+    icon: 'person'
+  },
+  {
     state: 'apps',
     name: 'APPS',
     type: 'sub',

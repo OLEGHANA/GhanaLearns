@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-title>Add Video Book Questions</mat-card-title>
+  <mat-card-subtitle>Assign Task To Student</mat-card-subtitle>
+  <hr>
+  <mat-card-content>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
+          <mat-option *ngFor="let group of groups" [value]="group._id">
+            {{ group.name }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Language" [matAutocomplete]="languageAuto" [value]="defaultLanguage">
+      </mat-input-container>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Video Book Title">
+      </mat-input-container>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <input matInput placeholder="Description">
+      </mat-input-container>
+    </div>
+    
+    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+        <mat-select placeholder="Number of Questions" [(ngModel)]="group" [required]="isRequired">
+          <mat-option *ngFor="let group of groups" [value]="group._id">
+            {{ group.name }}
+          </mat-option>
+        </mat-select>
+      </mat-input-container>
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Show Fields</button>      
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Reset Fields</button>      
+    </div>
+
+    <div class="pb-1">
+      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Save Questions</button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+    
+    

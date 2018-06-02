@@ -14,23 +14,24 @@ PerfectScrollbarComponent, PerfectScrollbarDirective } from 'ngx-perfect-scrollb
   templateUrl: './admin-layout.component.html'
 })
 export class AdminLayoutComponent implements OnInit, OnDestroy {
-public name:string;
- public image:string;
+public name: string;
+ public image: string;
  diveContainer_data = [
-    {id:1,image:'cards/notes.svg',name:'Learner Register', addLink:'/teacher/register-student',viewLink:'/register/view-learner'},
-    {id:2,image:'cards/clipboards.svg',name:'Assign Task', addLink:'/teacher/assign-task',viewLink:'/gallery'},
-    {id:3,image:'cards/notepad.svg',name:'Lesson Plan', addLink:'/maps/google',viewLink:'/gallery'},
-    {id:4,image:'cards/bookshelf.svg',name:'Resources', addLink:'/maps/google',viewLink:'/gallery'},
-    {id:5,image:'cards/studying.svg',name:'Professional Studies', addLink:'/maps/google',viewLink:'/gallery'},
-    {id:6,image:'cards/feedback.svg',name:'Feedback', addLink:'/maps/google',viewLink:'/gallery'},
-    {id:7,image:'cards/school.svg',name:'Facility Management', addLink:'/maps/google',viewLink:'/gallery'},
-    {id:8,image:'cards/settings.svg',name:'System Management', addLink:'/maps/google',viewLink:'/gallery'}
+    {id: 1, image: 'cards/notes.svg', name: 'Learner Register', addLink: '/teacher/register-student', viewLink: '/register/view-learner'},
+    {id: 2, image: 'cards/clipboards.svg', name: 'Assign Task', addLink: '/teacher/assign-task', viewLink: '/gallery'},
+    {id: 3, image: 'cards/notepad.svg', name: 'Lesson Plan', addLink: '/maps/google', viewLink: '/gallery'},
+    {id: 4, image: 'cards/bookshelf.svg', name: 'Resources', addLink: '/maps/google', viewLink: '/gallery'},
+    {id: 5, image: 'cards/studying.svg', name: 'Professional Studies', addLink: '/maps/google', viewLink: '/gallery'},
+    {id: 6, image: 'cards/feedback.svg', name: 'Feedback', addLink: '/maps/google', viewLink: '/gallery'},
+    {id: 7, image: 'cards/school.svg', name: 'Facility Management', addLink: '/maps/google', viewLink: '/gallery'},
+    {id: 8, image: 'cards/settings.svg', name: 'System Management', addLink: '/maps/google', viewLink: '/gallery'}
   ];
   
   /**
    * Added by Laxman for sample
    */
-  sampleLinks = {1: '/maps/google', 2: '/gallery', 3: '/maps/google', 4: '/gallery', 5: '/maps/google', 6: '/gallery', 7: '/maps/google', 8: '/gallery'};
+  sampleLinks = {1: '/maps/google', 2: '/gallery', 3: '/maps/google', 4: '/gallery',
+  5: '/maps/google', 6: '/gallery', 7: '/maps/google', 8: '/gallery'};
 
   private _router: Subscription;
 
