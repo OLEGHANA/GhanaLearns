@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { languages } from '../../shared/languages';
+import { languages } from '../../shared/constants';
 
 @Component({
   selector: 'app-student-resources',

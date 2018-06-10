@@ -3,93 +3,59 @@
   <mat-card-subtitle>Assign Task To Student</mat-card-subtitle>
   <hr>
   <mat-card-content>    
+    <form [formGroup]="libraryForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="Starting Date" formControlName="startDate">
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="End Date" formControlName="endDate">
+        </mat-input-container>
+      </div>
 
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="Starting Date">
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="End Date">
-      </mat-input-container>
-    </div>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Group/Level/Class" formControlName="level" [required]="isRequired" (change)="loadReaders()">
+            <mat-option *ngFor="let group of groups; let i = index" [value]="i">
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Language" formControlName="language" [required]="isRequired" (change)="requestLoadAllLanguage()">
+            <mat-option *ngFor="let lang of languages" [value]="lang.code">
+              {{ lang.label }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+      </div>
 
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="Language" [matAutocomplete]="languageAuto" [value]="defaultLanguage">
-      </mat-input-container>
-    </div>
-
-    <label>Selected Stories</label>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="1.">
-      </mat-input-container>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="2.">
-      </mat-input-container>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="3.">
-      </mat-input-container>
-    </div>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="4.">
-      </mat-input-container>
-    </div>
-    Note for discussion:<br/>
-    1. These stories could be used for comprehension passages, or listening and speaking or vocabulary building or even composition<br/>
-    2. The question however is what time would they have to read these stories? Would there be enough devices for everyone to read these stories? what are the implications for the time table<br/>
-    3. could this be an after school or a Saturday activity? who will supervise? how do you compensate the one who comes to supervise?
-    <div class="pb-1">
-      <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit</button>
-      <button mat-raised-button mat-button-sm color="accent" class="mr-1 mb-1">Reset</button>
-    </div>
-      
-    <mat-autocomplete #languageAuto="matAutocomplete">
-      <mat-option *ngFor="let lang of languages" [value]="lang.code">
-        <span>{{ lang.label }}</span>
-      </mat-option>
-    </mat-autocomplete>
-
+      <label>Selected Stories</label>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2" *ngFor="let cl of classLevel; let i = index">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;" [formGroup]="libraryForm.controls.library.controls[i]">
+          <mat-select placeholder="{{cl}}" formControlName="group" [required]="isRequired" (change)="requestLoadLanguage(i)">
+            <mat-option *ngFor="let group of groups; let i = index" [value]="i">
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;" [formGroup]="libraryForm.controls.library.controls[i]">
+          <mat-select placeholder="{{(i+1)}}." formControlName="resource" [required]="isRequired">
+            <mat-option *ngFor="let resource of resClassLevel[i]; let rIndex = index" [value]="rIndex">
+              {{ resource.title }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+      </div>
+      Note for discussion:<br/>
+      1. These stories could be used for comprehension passages, or listening and speaking or vocabulary building or even composition<br/>
+      2. The question however is what time would they have to read these stories? Would there be enough devices for everyone to read these stories? what are the implications for the time table<br/>
+      3. could this be an after school or a Saturday activity? who will supervise? how do you compensate the one who comes to supervise?
+      <div class="pb-1">
+        <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit</button>
+        <button mat-raised-button mat-button-sm color="accent" class="mr-1 mb-1">Reset</button>
+      </div>
+    </form>
   </mat-card-content>
 </mat-card>
     

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { languages } from '../../shared/languages';
+import { languages } from '../../shared/constants';
 
 @Component({
   selector: 'app-sync-tablets',

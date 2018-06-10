@@ -26,6 +26,7 @@ import { LessonPlansComponent } from './lesson-plans/lesson-plans.component';
 import { PreparePlanComponent } from './prepare-plan/prepare-plan.component';
 import { ManageStudentsComponent } from './manage-students/manage-students.component';
 import { StudentExcercisesComponent } from './student-excercises/student-excercises.component';
+import { QuoteComponent } from './quote.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { StudentExcercisesComponent } from './student-excercises/student-excerci
     NgxDatatableModule
   ],
   declarations: [
+    QuoteComponent,
     RegisterStudentComponent,
     AssignTaskComponent,
     MyLibraryComponent,

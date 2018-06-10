@@ -49,13 +49,14 @@ const MENUITEMS = [
     name: 'HEAD TEACHER',
     type: 'sub',
     icon: 'person',
-    children: [{path: 'register-school', name: 'School Details'},
-      {path: 'manage-students', name: 'Manage Students'},
-      {path: 'student-resources', name: 'Student Resources'},
-      {path: 'manage-accessibility', name: 'Manage Accessibility'},
-      {path: 'view-feedbacks', name: 'View Feedback'},
-      {path: 'lesson-plans', name: 'All Lesson Plans'},
-      {path: 'view-students', name: 'View all Students'}
+    children: [
+      {state: 'register-school', name: 'School Details'},
+      {state: 'manage-students', name: 'Manage Students'},
+      {state: 'student-resources', name: 'Student Resources'},
+      {state: 'manage-accessibility', name: 'Manage Accessibility'},
+      {state: 'view-feedbacks', name: 'View Feedback'},
+      {state: 'lesson-plans', name: 'All Lesson Plans'},
+      {state: 'view-students', name: 'View all Students'}
     ]
   },
   {
@@ -219,8 +220,7 @@ const MENUITEMS = [
     type: 'sub',
     icon: 'web',
     children: [
-      {state: 'basic', name: 'BASIC'},
-     
+      {state: 'basic', name: 'BASIC'}
     ]
   },
     {

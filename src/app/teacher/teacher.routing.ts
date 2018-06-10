@@ -15,11 +15,15 @@ import { LessonPlansComponent } from './lesson-plans/lesson-plans.component';
 import { PreparePlanComponent } from './prepare-plan/prepare-plan.component';
 import { ManageStudentsComponent } from './manage-students/manage-students.component';
 import { StudentExcercisesComponent } from './student-excercises/student-excercises.component';
+import { QuoteComponent } from './quote.component';
 
 export const TeacherRoutes: Routes = [
   {
     path: '',
     children: [{
+      path: '',
+      component: QuoteComponent
+    }, {
       path: 'register-student',
       component: RegisterStudentComponent
     }, {
