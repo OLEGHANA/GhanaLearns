@@ -3,6 +3,7 @@ import { languages } from '../../shared/constants';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CouchService } from '../../shared/couchdb.service';
 import { forkJoin } from 'rxjs/observable/forkJoin';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-audio-books',
@@ -54,10 +55,10 @@ export class AudioBooksComponent implements OnInit {
 
   initializeForm() {
     this.audioTaskForm = this.fb.group({
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
+      startDate: ['', Validators.compose([Validators.required, CustomValidators.date])],
+      endDate: ['', Validators.compose([Validators.required, CustomValidators.date])],
       level: [0, Validators.required],
-      language: ['', Validators.required],
+      language: [this.selectedLang, Validators.required],
       library: this.fb.array([
         this.fb.group({
           resource: ['', Validators.required]
@@ -96,7 +97,7 @@ export class AudioBooksComponent implements OnInit {
         resourceId: '',
         context: {
           subject: '',
-          use: 'audio book task',
+          use: 'stories for the week',
           groupId: '',
           facilityId: this.facility.facilityId
         }
@@ -111,7 +112,7 @@ export class AudioBooksComponent implements OnInit {
         timestamp: '',
         context: {
           subject: '',
-          use: 'audio book task',
+          use: 'stories for the week',
           level: ''
         }
       };

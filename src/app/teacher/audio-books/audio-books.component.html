@@ -6,10 +6,10 @@
     <form [formGroup]="audioTaskForm" (ngSubmit)="onSubmit()">
       <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
         <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-          <input matInput placeholder="Starting Date" formControlName="startDate">
+          <input matInput placeholder="Starting Date" formControlName="startDate" type="date">
         </mat-input-container>
         <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-          <input matInput placeholder="End Date" formControlName="endDate">
+          <input matInput placeholder="End Date" formControlName="endDate" type="date">
         </mat-input-container>
       </div>
 
@@ -45,6 +45,5 @@
       </div>
     </form>
   </mat-card-content>
-</mat-card>
-    
+</mat-card>    
     

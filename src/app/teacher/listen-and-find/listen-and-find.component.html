@@ -3,52 +3,57 @@
   <mat-card-subtitle>View Previous Task Result</mat-card-subtitle>
   <hr>
   <mat-card-content>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="Starting Date">
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="End Date">
-      </mat-input-container>
-    </div>
+    <form [formGroup]="listenFindForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="Starting Date" formControlName="startDate" type="date">
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="End Date" formControlName="endDate" type="date">
+        </mat-input-container>
+      </div>
 
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="Language" [matAutocomplete]="languageAuto" [value]="defaultLanguage">
-      </mat-input-container>
-    </div>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Group/Level/Class" formControlName="level" [required]="isRequired" (change)="requestLoadLanguage()">
+            <mat-option *ngFor="let group of groups; let i = index" [value]="i">
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Language" formControlName="language" [required]="isRequired" (change)="requestLoadLanguage()">
+            <mat-option *ngFor="let lang of languages" [value]="lang.code">
+              {{ lang.label }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+      </div>
 
-    <h3>Listen And Find</h3>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Object Words" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Time/Duration" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-    </div>
-      
-    <mat-autocomplete #languageAuto="matAutocomplete">
-      <mat-option *ngFor="let lang of languages" [value]="lang.code">
-        <span>{{ lang.label }}</span>
-      </mat-option>
-    </mat-autocomplete>
+      <h3>Listen And Find</h3>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Object Words" formControlName="imageSetting">
+            <mat-option *ngFor="let setting of settings;" [value]="setting.value">
+              {{ setting.label }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Time / Duration" formControlName="duration">
+            <mat-option *ngFor="let dur of durations" [value]="dur.value">
+              {{ dur.label }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+      </div>
 
+      <img src="assets/images/{{listenFindForm.controls.imageSetting.value}}.jpg">
+
+      <div class="pb-1">
+        <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit Task</button>      
+      </div>
+    </form>
   </mat-card-content>
 </mat-card>
       

@@ -4,6 +4,7 @@ import { StudentResourcesComponent } from '../student-resources/student-resource
 import { CouchService } from '../../shared/couchdb.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { forkJoin } from 'rxjs/observable/forkJoin';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-my-library',
@@ -55,10 +56,10 @@ export class MyLibraryComponent implements OnInit {
 
   initializeForm() {
     this.libraryForm = this.fb.group({
-      startDate: ['', Validators.required],
-      endDate: ['', Validators.required],
+      startDate: ['', Validators.compose([Validators.required, CustomValidators.date])],
+      endDate: ['', Validators.compose([Validators.required, CustomValidators.date])],
       level: [0, Validators.required],
-      language: ['', Validators.required],
+      language: [this.selectedLang, Validators.required],
       library: this.fb.array([
         this.fb.group({
           group: [0, Validators.required],
