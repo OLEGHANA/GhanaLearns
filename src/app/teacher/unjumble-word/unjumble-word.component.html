@@ -3,37 +3,55 @@
   <mat-card-subtitle>View Previous Task Result</mat-card-subtitle>
   <hr>
   <mat-card-content>
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="Starting Date">
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="End Date">
-      </mat-input-container>
-    </div>
+    <form [formGroup]="unjumbleForm" (ngSubmit)="onSubmit()">
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="Starting Date" formControlName="startDate" type="date">
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="End Date" formControlName="endDate" type="date">
+        </mat-input-container>
+      </div>
 
-    <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <mat-select placeholder="Group/Level/Class" [(ngModel)]="group" [required]="isRequired">
-          <mat-option *ngFor="let group of groups" [value]="group._id">
-            {{ group.name }}
-          </mat-option>
-        </mat-select>
-      </mat-input-container>
-      <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
-        <input matInput placeholder="Language" [matAutocomplete]="languageAuto" [value]="defaultLanguage">
-      </mat-input-container>
-    </div>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Group/Level/Class" formControlName="level" [required]="isRequired">
+            <mat-option *ngFor="let group of groups; let i = index" [value]="i">
+              {{ group.name }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Language" formControlName="language" [required]="isRequired">
+            <mat-option *ngFor="let lang of languages" [value]="lang.code">
+              {{ lang.label }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+      </div>
 
-    <h3>Unjumble Word</h3>
-    
-      
-    <mat-autocomplete #languageAuto="matAutocomplete">
-      <mat-option *ngFor="let lang of languages" [value]="lang.code">
-        <span>{{ lang.label }}</span>
-      </mat-option>
-    </mat-autocomplete>
+      <h3>Unjumble Word</h3>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="Words" formControlName="words">
+        </mat-input-container>
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <mat-select placeholder="Time / Duration" formControlName="duration">
+            <mat-option *ngFor="let dur of durations" [value]="dur.value">
+              {{ dur.label }}
+            </mat-option>
+          </mat-select>
+        </mat-input-container>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="start center" class="mb-2">
+        <mat-input-container class="ml-xs mr-xs" style="width: 100%;">
+          <input matInput placeholder="Result" formControlName="jumbleWord" readonly>
+        </mat-input-container>
+      </div>
 
+      <div class="pb-1">
+        <button mat-raised-button mat-button-sm color="primary" class="mr-1 mb-1">Submit Task</button>      
+      </div>
+    </form>
   </mat-card-content>
 </mat-card>
-      
